@@ -14,10 +14,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
     font-family:Arial, Helvetica, sans-serif;
 }
 
+.right{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left{
+    width: 40%;
+}
 .box{
     /* background-color: rgba(255, 255, 255, 0.446); */
     background-color: rgb(255, 255, 255);
@@ -32,7 +41,33 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
 
+@media (max-width: 620px){
+  body{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .right, .left{
+   width: 100%;
+   height: 50%;
+  }
+
+  .input{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .box{
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
 }
 
 .lil-box{
@@ -60,6 +95,10 @@ body{
     -webkit-backdrop-filter: blur(3px);
 }
 
+.box-container > h3{
+    color: white;
+}
+
 .input-box{
     width: 100%;
     display: flex;
@@ -67,7 +106,6 @@ body{
     font-size: 15px;
     font-weight: bold;
 }
-
 input[type=color]{
     width: 30px;
     height: 30px;
@@ -77,6 +115,7 @@ input[type=color]{
 input[type=range]{
     width: 80%;
 }
+
 
 .range input[type=range],
 .range input[type=range]::-webkit-slider-thumb {
@@ -105,4 +144,53 @@ input[type=range]{
     width: 17px;
     height: 17px;
 }
+
+output{
+    color: white;
+}
+
+
+@media (max-width: 620px){
+    .lil-box{
+      background-color: rgba(255, 255, 255, 0.296);
+      width: 80%;
+      height: 15%;
+      
+    }
+    .box-container{
+     width: 100%;
+     height: 100%;
+     
+    }
+
+    .box-container > h3{
+        font-size: 11px;
+        line-height:0px;
+        color: white;
+    }
+  
+    .input{
+      height: 100%;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    input[type=color]{
+        width: 20px;
+        height: 20px;
+        margin-top: 0px;
+        /* margin-bottom: 20px; */
+    }
+    
+    input[type=range]{
+        width: 80%;
+    }
+
+    output{
+        color: white;
+        font-size: 14px;
+    }
+    
+}
+
 
