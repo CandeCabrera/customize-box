@@ -1,0 +1,108 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+
+body{
+    background-image: url('https://images5.alphacoders.com/330/330738.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.box{
+    /* background-color: rgba(255, 255, 255, 0.446); */
+    background-color: rgb(255, 255, 255);
+    width: 450px;
+    height:450px;
+    opacity: 50%;
+}
+
+.input{
+    height: 450px;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.lil-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.296);
+    border-radius: 10px;
+    width: 350px;
+    height: 80px;
+    font-size: 13px;
+}
+
+.box-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8px 13px;
+    font-weight:lighter;
+    border-radius: 10px;
+    width: 350px;
+    height: 80px;
+    font-size: 13px;
+    backdrop-filter: blur(20px)saturate(120%) contrast(200%);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.input-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type=color]{
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+}
+
+input[type=range]{
+    width: 80%;
+}
+
+.range input[type=range],
+.range input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.range input[type=range], .range__input-fill {
+  border-radius: 0.25em;
+  height: 0.5em;
+}
+.range input[type=range] {
+  background-color: rgba(42, 11, 50, 0.645);/*rgba(244, 228, 248, 0.645)*/
+  display: block;
+  margin: 0.5em 0;
+  padding: 0;
+}
+.range input[type=range]:focus {
+  outline: transparent;
+}
+
+.range input[type=range]::-webkit-slider-thumb{
+    background-color: rgb(97, 17, 129);/*rgba(108, 17, 143, 1)*/
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+}
+
