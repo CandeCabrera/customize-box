@@ -18,18 +18,41 @@ const radiusOut = document.querySelector('.radius-output')
 
 
 
+/* background-color: rgba(255, 255, 255, 0.446); */
+let colorRgb = []
+let inRgb;
+
+
+const hexToRgb = function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+      //a: 1,
+    } : null; 
+}
+
+
+
 color.addEventListener('input', (e)=>{
-  box.style.background = e.target.value
-  
+  let actualColor = hexToRgb(e.target.value)
+  //console.log(hexToRgb(color.value));
+  colorRgb = Object.values(actualColor).join(', ')
+  let colores = `rgba(${colorRgb}, 1)`
+  box.style.background = colores//`${e.target.value}`
+    console.log(colores);
+
 });
 
 opacity.addEventListener('input', (e)=>{
-  box.style.opacity =`${e.target.value}%`
+  box.style.background =`rgba(${colorRgb}, ${0.01 * e.target.value})`
   opacityOut.value = `${e.target.value}%`
 });
 
+
 blur.addEventListener('input', (e)=>{
-    box.style.filter = `Blur(${e.target.value}px)`
+    box.style.backdropFilter = `Blur(${e.target.value}px)`
     blurOut.value = `${e.target.value}px`
 });
 
