@@ -34,6 +34,10 @@ const hexToRgb = function hexToRgb(hex) {
 }
 
 
+opacity.addEventListener('input', (e)=>{
+    box.style.background =`rgba(255, 255, 255, ${0.01 * e.target.value})`
+    opacityOut.value = `${e.target.value}%`
+  });
 
 color.addEventListener('input', (e)=>{
   let actualColor = hexToRgb(e.target.value)
