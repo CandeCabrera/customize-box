@@ -33,30 +33,45 @@ const hexToRgb = function hexToRgb(hex) {
     } : null; 
 }
 
+let opacidad;
 
 opacity.addEventListener('input', (e)=>{
+    let actualOpacity = []
     box.style.background =`rgba(255, 255, 255, ${0.01 * e.target.value})`
+    actualOpacity.push(0.01 * e.target.value)
     opacityOut.value = `${e.target.value}%`
-  });
+    opacidad = actualOpacity
+    
+});
 
+console.log(opacidad);
+  
 color.addEventListener('input', (e)=>{
+  let actualOpacity = opacidad.join('')
+  //console.log(actualOpacity);
   let actualColor = hexToRgb(e.target.value)
   //console.log(hexToRgb(color.value));
   colorRgb = Object.values(actualColor).join(', ')
-  let colores = `rgba(${colorRgb}, 1)`
+  let colores = `rgba(${colorRgb}, ${actualOpacity})`
   box.style.background = colores//`${e.target.value}`
-    console.log(colores);
+ //console.log(colores);
 
 });
 
 opacity.addEventListener('input', (e)=>{
-  box.style.background =`rgba(${colorRgb}, ${0.01 * e.target.value})`
-  opacityOut.value = `${e.target.value}%`
-});
+    box.style.background =`rgba(${colorRgb}, ${0.01 * e.target.value})`
+    opacityOut.value = `${e.target.value}%`
+  });
+
+// opacity.addEventListener('input', (e)=>{
+//   box.style.background =`rgba(${colorRgb}, ${0.01 * e.target.value})`
+//   opacityOut.value = `${e.target.value}%`
+// });
 
 
 blur.addEventListener('input', (e)=>{
     box.style.backdropFilter = `Blur(${e.target.value}px)`
+    box.style.webkitBackdropFilter = `Blur(${e.target.value}px)`
     blurOut.value = `${e.target.value}px`
 });
 
