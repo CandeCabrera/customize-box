@@ -16,10 +16,20 @@ const sizeOut = document.querySelector('.size-output')
 const radius = document.querySelector('.radius')
 const radiusOut = document.querySelector('.radius-output')
 
+const contrast = document.querySelector('.contrast')
+const contrastOut = document.querySelector('.contrast-output')
+
+const saturate = document.querySelector('.saturate')
+const saturateOut = document.querySelector('.saturate-output')
+
+const boxContainer = document.querySelectorAll('.box-container')
+const code = document.querySelector('.code')
+
 
 
 /* background-color: rgba(255, 255, 255, 0.446); */
-let colorRgb = []
+//let colorRgb = []
+let colorRgb = '255, 255, 255'
 let inRgb;
 
 
@@ -33,7 +43,10 @@ const hexToRgb = function hexToRgb(hex) {
     } : null; 
 }
 
-let opacidad;
+let opacidad = 1
+let difuminado = 0
+let saturacion = 100
+let contraste = 100
 
 opacity.addEventListener('input', (e)=>{
     let actualOpacity = []
@@ -41,26 +54,51 @@ opacity.addEventListener('input', (e)=>{
     actualOpacity.push(0.01 * e.target.value)
     opacityOut.value = `${e.target.value}%`
     opacidad = actualOpacity
+    code.innerHTML = `<div>
+    background: rgba(${colorRgb}, ${0.01 * e.target.value});
+    </div>
+    `
     
 });
 
 console.log(opacidad);
   
 color.addEventListener('input', (e)=>{
-  let actualOpacity = opacidad.join('')
+  //let actualOpacity = opacidad.join('')
   //console.log(actualOpacity);
   let actualColor = hexToRgb(e.target.value)
   //console.log(hexToRgb(color.value));
   colorRgb = Object.values(actualColor).join(', ')
-  let colores = `rgba(${colorRgb}, ${actualOpacity})`
+  let colores = `rgba(${colorRgb}, ${opacity})`
   box.style.background = colores//`${e.target.value}`
  //console.log(colores);
-
+ code.innerHTML = `  
+ <div>
+ background: rgba(${colorRgb}, ${opacidad});
+ <br>
+ backdrop-filter: blur(${difuminado}px);
+ <br>
+ backdrop-filter: contrast(${contraste}%);
+ <br>
+ backdrop-filter: saturate(${saturacion}%);
+ </div>
+ `  
 });
 
 opacity.addEventListener('input', (e)=>{
     box.style.background =`rgba(${colorRgb}, ${0.01 * e.target.value})`
     opacityOut.value = `${e.target.value}%`
+    code.innerHTML = `  
+    <div>
+    background: rgba(${colorRgb}, ${opacidad});
+    <br>
+    backdrop-filter: blur(${difuminado}px);
+    <br>
+    backdrop-filter: contrast(${contraste}%);
+    <br>
+    backdrop-filter: saturate(${saturacion}%);
+    </div>
+    `  
   });
 
 // opacity.addEventListener('input', (e)=>{
@@ -69,10 +107,63 @@ opacity.addEventListener('input', (e)=>{
 // });
 
 
+
 blur.addEventListener('input', (e)=>{
-    box.style.backdropFilter = `Blur(${e.target.value}px)`
-    box.style.webkitBackdropFilter = `Blur(${e.target.value}px)`
+    box.style.backdropFilter = `Blur(${e.target.value}px) contrast(${contraste}%) saturate(${saturacion}%)`
+    box.style.webkitBackdropFilter = `Blur(${e.target.value}px) contrast(${contraste}%) saturate(${saturacion}%)`
     blurOut.value = `${e.target.value}px`
+    difuminado = e.target.value
+    code.innerHTML = `  
+    <div>
+    background: rgba(${colorRgb}, ${opacidad});
+    <br>
+    backdrop-filter: blur(${difuminado}px);
+    <br>
+    backdrop-filter: contrast(${contraste}%);
+    <br>
+    backdrop-filter: saturate(${saturacion}%);
+    </div>
+    `  
+});
+
+
+
+contrast.addEventListener('input', (e)=>{
+    box.style.backdropFilter = `Blur(${difuminado}px) contrast(${e.target.value}%) saturate(${saturacion}%)`
+    box.style.webkitBackdropFilter = `Blur(${difuminado}px) contrast(${e.target.value}%) saturate(${saturacion}%)`
+    contrastOut.value = `${e.target.value}%`
+    contraste = e.target.value
+    code.innerHTML = `  
+    <div>
+    background: rgba(${colorRgb}, ${opacidad});
+    <br>
+    backdrop-filter: blur(${difuminado}px);
+    <br>
+    backdrop-filter: contrast(${contraste}%);
+    <br>
+    backdrop-filter: saturate(${saturacion}%);
+    </div>
+    `  
+});
+
+
+
+saturate.addEventListener('input', (e)=>{
+    box.style.backdropFilter = `Blur(${difuminado}px) contrast(${contraste}%) saturate(${e.target.value}%)`
+    box.style.webkitBackdropFilter = `Blur(${difuminado}px) contrast(${contraste}%) saturate(${e.target.value}%)`
+    saturateOut.value = `${e.target.value}%`
+    saturacion = e.target.value
+    code.innerHTML = `  
+    <div>
+    background: rgba(${colorRgb}, ${opacidad});
+    <br>
+    backdrop-filter: blur(${difuminado}px);
+    <br>
+    backdrop-filter: contrast(${contraste}%);
+    <br>
+    backdrop-filter: saturate(${saturacion}%);
+    </div>
+    `  
 });
 
 
@@ -86,6 +177,19 @@ radius.addEventListener('input', (e)=>{
     box.style.borderRadius = `${e.target.value}px`
     radiusOut.value = `${e.target.value}px`
 });
+
+
+/*boxContainer.addEventListener('input', ()=>{
+    code.value = `
+    background: rgba(${colorRgb}, ${0.01 * opacity.value});
+    backdrop-filter: blur(${blur.value}px);
+    backdrop-filter: contrast(${contrast.value}%);
+    backdrop-filter: saturate(${saturate.value}%);
+    `
+    console.log(code);
+})*/
+
+console.log(boxContainer);
 
 
 

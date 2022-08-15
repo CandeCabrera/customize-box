@@ -27,6 +27,7 @@ body{
 
 .left{
     width: 40%;
+  
 }
 .box{
     /* background-color: rgba(255, 255, 255, 0.446); */
@@ -46,12 +47,21 @@ body{
 
 @media (max-width: 620px){
   body{
+    height: fit-content;
     flex-direction: column;
     gap: 10px;
   }
   .right, .left{
    width: 100%;
    height: 50%;
+  }
+
+  .right{
+    margin-top: 30px;
+  }
+  .left{
+    margin-top: 180px;
+    margin-bottom: 10px;
   }
 
   .input{
@@ -75,6 +85,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-top: -120px;
+    margin-bottom: 130px;
     background-color: rgba(255, 255, 255, 0.296);
     border-radius: 10px;
     width: 350px;
@@ -97,7 +109,7 @@ body{
 }
 
 .box-container > h3{
-    color: white;
+    color: rgb(31, 10, 34);
 }
 
 .input-box{
@@ -147,9 +159,45 @@ input[type=range]{
 }
 
 output{
-    color: white;
+    color: rgb(31, 10, 34);;
 }
 
+.code-box{
+  height: 180px;
+}
+
+.code-container{
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 8px 13px;
+  font-weight:lighter;
+  border-radius: 10px;
+  width: 350px;
+  font-size: 13px;
+  backdrop-filter: blur(20px)saturate(120%) contrast(200%);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.code-container > h3{
+  color: rgb(31, 10, 34);
+  /* margin-top: -6px; */
+}
+
+.code{
+  color: white;
+  line-height: 20px;
+  /* margin-top: -25px; */
+  background-color: rgba(42, 20, 55, 0.432);
+  height: 100px;
+  width: 80%;
+  padding: 10px 0 10px 9px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  border-radius: 10px;
+}
 
 @media (max-width: 620px){
     .lil-box{
@@ -190,6 +238,36 @@ output{
     output{
         color: white;
         font-size: 14px;
+    }
+
+    .code-box{
+      height: 140px;
+    }
+    
+    .code-container{
+      width: 100%;
+    }
+    
+    .code-container > h3{
+      color: white;
+      font-size: 11px;
+      margin-top: -6px;
+    }
+    
+    .code{
+      width: 80%;
+      height: 15%;
+      color: white;
+      line-height: 15px;
+      margin-top: -25px;
+      background-color: rgba(135, 83, 164, 0.432);
+      height: 90px;
+      width: 70%;
+      padding: 10px 0 10px 9px;
+      display: flex;
+      align-self: center;
+      font-size: 9.5px;
+      border-radius: 10px;
     }
     
 }
