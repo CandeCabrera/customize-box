@@ -277,6 +277,9 @@ output{
 
     .code-box{
       height: 140px;
+      background-color: rgba(48, 47, 48, 0.374);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
     }
     
     .code-container{
