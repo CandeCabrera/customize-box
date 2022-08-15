@@ -69,9 +69,9 @@ color.addEventListener('input', (e)=>{
   let actualColor = hexToRgb(e.target.value)
   //console.log(hexToRgb(color.value));
   colorRgb = Object.values(actualColor).join(', ')
-  let colores = `rgba(${colorRgb}, ${opacity})`
+  let colores = `rgba(${colorRgb}, ${opacidad})`
   box.style.background = colores//`${e.target.value}`
- //console.log(colores);
+ console.log(colores);
  code.innerHTML = `  
  <div>
  background: rgba(${colorRgb}, ${opacidad});
