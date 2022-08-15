@@ -22,13 +22,9 @@ const contrastOut = document.querySelector('.contrast-output')
 const saturate = document.querySelector('.saturate')
 const saturateOut = document.querySelector('.saturate-output')
 
-const boxContainer = document.querySelectorAll('.box-container')
 const code = document.querySelector('.code')
 
 
-
-/* background-color: rgba(255, 255, 255, 0.446); */
-//let colorRgb = []
 let colorRgb = '255, 255, 255'
 let inRgb;
 
@@ -61,7 +57,6 @@ opacity.addEventListener('input', (e)=>{
     
 });
 
-console.log(opacidad);
   
 color.addEventListener('input', (e)=>{
   //let actualOpacity = opacidad.join('')
@@ -99,13 +94,7 @@ opacity.addEventListener('input', (e)=>{
     backdrop-filter: saturate(${saturacion}%);
     </div>
     `  
-  });
-
-// opacity.addEventListener('input', (e)=>{
-//   box.style.background =`rgba(${colorRgb}, ${0.01 * e.target.value})`
-//   opacityOut.value = `${e.target.value}%`
-// });
-
+});
 
 
 blur.addEventListener('input', (e)=>{
@@ -127,7 +116,6 @@ blur.addEventListener('input', (e)=>{
 });
 
 
-
 contrast.addEventListener('input', (e)=>{
     box.style.backdropFilter = `Blur(${difuminado}px) contrast(${e.target.value}%) saturate(${saturacion}%)`
     box.style.webkitBackdropFilter = `Blur(${difuminado}px) contrast(${e.target.value}%) saturate(${saturacion}%)`
@@ -145,7 +133,6 @@ contrast.addEventListener('input', (e)=>{
     </div>
     `  
 });
-
 
 
 saturate.addEventListener('input', (e)=>{
@@ -178,27 +165,3 @@ radius.addEventListener('input', (e)=>{
     radiusOut.value = `${e.target.value}px`
 });
 
-
-/*boxContainer.addEventListener('input', ()=>{
-    code.value = `
-    background: rgba(${colorRgb}, ${0.01 * opacity.value});
-    backdrop-filter: blur(${blur.value}px);
-    backdrop-filter: contrast(${contrast.value}%);
-    backdrop-filter: saturate(${saturate.value}%);
-    `
-    console.log(code);
-})*/
-
-console.log(boxContainer);
-
-
-
-
-
-
-
-
-
-
-
-//! template litarals `````````````
