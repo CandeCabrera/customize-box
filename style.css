@@ -217,7 +217,7 @@ output{
 
 .code-container > h3{
   color: rgb(31, 10, 34);
-  /* margin-top: -6px; */
+  margin-top: 1px; 
 }
 
 .code{
@@ -225,12 +225,12 @@ output{
   line-height: 20px;
   /* margin-top: -25px; */
   background-color: rgba(42, 20, 55, 0.432);
-  height: 100px;
+  height: 130px;
   width: 80%;
   padding: 10px 0 10px 9px;
   display: flex;
   align-items: center;
-  font-size: 13px;
+  font-size: 12px;
   border-radius: 10px;
 }
 
@@ -293,8 +293,6 @@ output{
     }
     
     .code{
-      width: 80%;
-      height: 15%;
       color: white;
       line-height: 15px;
       margin-top: -25px;
@@ -304,7 +302,7 @@ output{
       padding: 10px 0 10px 9px;
       display: flex;
       align-self: center;
-      font-size: 9.5px;
+      font-size: 9px;
       border-radius: 10px;
     }
     

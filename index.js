@@ -69,13 +69,17 @@ color.addEventListener('input', (e)=>{
  console.log(colores);
  code.innerHTML = `  
  <div>
- background: rgba(${colorRgb}, ${opacidad});
+ .glass{
  <br>
- backdrop-filter: blur(${difuminado}px);
+     background: rgba(${colorRgb}, ${opacidad});
  <br>
- backdrop-filter: contrast(${contraste}%);
+     backdrop-filter: blur(${difuminado}px);
  <br>
- backdrop-filter: saturate(${saturacion}%);
+     backdrop-filter: contrast(${contraste}%);
+ <br>
+     backdrop-filter: saturate(${saturacion}%);
+ <br>
+ }
  </div>
  `  
 });
@@ -85,13 +89,17 @@ opacity.addEventListener('input', (e)=>{
     opacityOut.value = `${e.target.value}%`
     code.innerHTML = `  
     <div>
-    background: rgba(${colorRgb}, ${opacidad});
+    .glass{
     <br>
-    backdrop-filter: blur(${difuminado}px);
+        background: rgba(${colorRgb}, ${opacidad});
     <br>
-    backdrop-filter: contrast(${contraste}%);
+        backdrop-filter: blur(${difuminado}px);
     <br>
-    backdrop-filter: saturate(${saturacion}%);
+        backdrop-filter: contrast(${contraste}%);
+    <br>
+        backdrop-filter: saturate(${saturacion}%);
+    <br>
+    }
     </div>
     `  
 });
@@ -104,13 +112,17 @@ blur.addEventListener('input', (e)=>{
     difuminado = e.target.value
     code.innerHTML = `  
     <div>
-    background: rgba(${colorRgb}, ${opacidad});
+    .glass{
     <br>
-    backdrop-filter: blur(${difuminado}px);
+        background: rgba(${colorRgb}, ${opacidad});
     <br>
-    backdrop-filter: contrast(${contraste}%);
+        backdrop-filter: blur(${difuminado}px);
     <br>
-    backdrop-filter: saturate(${saturacion}%);
+        backdrop-filter: contrast(${contraste}%);
+    <br>
+        backdrop-filter: saturate(${saturacion}%);
+    <br>
+    }
     </div>
     `  
 });
@@ -123,13 +135,17 @@ contrast.addEventListener('input', (e)=>{
     contraste = e.target.value
     code.innerHTML = `  
     <div>
-    background: rgba(${colorRgb}, ${opacidad});
+    .glass{
     <br>
-    backdrop-filter: blur(${difuminado}px);
+        background: rgba(${colorRgb}, ${opacidad});
     <br>
-    backdrop-filter: contrast(${contraste}%);
+        backdrop-filter: blur(${difuminado}px);
     <br>
-    backdrop-filter: saturate(${saturacion}%);
+        backdrop-filter: contrast(${contraste}%);
+    <br>
+        backdrop-filter: saturate(${saturacion}%);
+    <br>
+    }
     </div>
     `  
 });
@@ -142,13 +158,17 @@ saturate.addEventListener('input', (e)=>{
     saturacion = e.target.value
     code.innerHTML = `  
     <div>
-    background: rgba(${colorRgb}, ${opacidad});
+    .glass{
     <br>
-    backdrop-filter: blur(${difuminado}px);
+        background: rgba(${colorRgb}, ${opacidad});
     <br>
-    backdrop-filter: contrast(${contraste}%);
+        backdrop-filter: blur(${difuminado}px);
     <br>
-    backdrop-filter: saturate(${saturacion}%);
+        backdrop-filter: contrast(${contraste}%);
+    <br>
+        backdrop-filter: saturate(${saturacion}%);
+    <br>
+    }
     </div>
     `  
 });
